@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <None Include="..\..\RollossusMechanics.uproject" />
+    <Filter Include="Source">
+      <UniqueIdentifier>{AF354664-2D2A-4CD9-B639-A3EE62B88D49}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\RollossusMechanics.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <None Include="..\..\Source\RollossusMechanicsEditor.Target.cs">
+      <Filter>Source</Filter>
+    </None>
+    <Filter Include="Config">
+      <UniqueIdentifier>{B68A234C-FBC8-40EF-A10A-259DDD5CF3DC}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Config\DefaultEditor.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultEngine.ini">
+      <Filter>Config</Filter>
+    </None>
+    <None Include="..\..\Config\DefaultGame.ini">
+      <Filter>Config</Filter>
+    </None>
+    <Filter Include="Source\RollossusMechanics">
+      <UniqueIdentifier>{B3DDAC00-930F-44D6-BE5D-977538C4F8DB}</UniqueIdentifier>
+    </Filter>
+    <None Include="..\..\Source\RollossusMechanics\RollossusMechanics.Build.cs">
+      <Filter>Source\RollossusMechanics</Filter>
+    </None>
+    <ClCompile Include="..\..\Source\RollossusMechanics\RollossusMechanics.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RollossusMechanics\RollossusMechanics.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\RollossusMechanics\RollossusMechanicsGameModeBase.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RollossusMechanics\RollossusMechanicsGameModeBase.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\RollossusMechanics\C_BallMinimum.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\RollossusMechanics\C_BallMinimum.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+  </ItemGroup>
+</Project>
