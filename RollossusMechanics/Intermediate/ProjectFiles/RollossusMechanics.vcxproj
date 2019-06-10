@@ -376,9 +376,11 @@
     <None Include="..\..\Source\RollossusMechanics\RollossusMechanics.Build.cs" />
     <ClCompile Include="..\..\Source\RollossusMechanics\C_EnemyBall.cpp" />
     <ClCompile Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.cpp" />
+    <ClCompile Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.cpp" />
     <ClCompile Include="..\..\Source\RollossusMechanics\RollossusMechanics.cpp" />
     <ClInclude Include="..\..\Source\RollossusMechanics\C_EnemyBall.h" />
     <ClInclude Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.h" />
+    <ClInclude Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.h" />
     <ClInclude Include="..\..\Source\RollossusMechanics\RollossusMechanics.h" />
     <ClCompile Include="..\..\Source\RollossusMechanics\RollossusMechanicsGameModeBase.cpp" />
     <ClInclude Include="..\..\Source\RollossusMechanics\RollossusMechanicsGameModeBase.h" />

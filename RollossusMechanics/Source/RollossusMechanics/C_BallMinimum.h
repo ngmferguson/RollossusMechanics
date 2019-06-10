@@ -6,7 +6,6 @@
 #include "Components/InputComponent.h"
 #include "C_BallMinimum.generated.h"
 
-
 UCLASS( ClassGroup=(Custom), meta=(BlueprintSpawnableComponent) )
 class ROLLOSSUSMECHANICS_API UC_BallMinimum : public UActorComponent
 {
@@ -16,8 +15,16 @@ public:
 	UC_BallMinimum();
 
 protected:
+	//---------
+	//FUNCTIONS
+	//---------
+
 	// Called when the game starts
 	virtual void BeginPlay() override;
+
+	///Destroys the actor this component is attached to
+	UFUNCTION()
+	void Death();
 
 	//---------
 	//VARIABLES
@@ -40,7 +47,6 @@ private:
 	//VARIABLES
 	//---------
 
-
 	//The Input axis
 	float UpInput;
 	float RightInput;
@@ -54,7 +60,5 @@ private:
 	UFUNCTION()
 	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
-	///Destroys the actor this component is attached to
-	UFUNCTION()
-	void Death();
+	
 };

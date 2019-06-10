@@ -17,15 +17,7 @@ struct FHitResult;
 #endif
 #define ROLLOSSUSMECHANICS_C_BallMinimum_generated_h
 
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execDeath) \
-	{ \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->Death(); \
-		P_NATIVE_END; \
-	} \
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_RPC_WRAPPERS \
  \
 	DECLARE_FUNCTION(execRegisterHit) \
 	{ \
@@ -38,10 +30,7 @@ struct FHitResult;
 		P_NATIVE_BEGIN; \
 		P_THIS->RegisterHit(Z_Param_HitComponent,Z_Param_OtherActor,Z_Param_OtherComponent,Z_Param_NormalImpulse,Z_Param_Out_Hit); \
 		P_NATIVE_END; \
-	}
-
-
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
+	} \
  \
 	DECLARE_FUNCTION(execDeath) \
 	{ \
@@ -49,7 +38,10 @@ struct FHitResult;
 		P_NATIVE_BEGIN; \
 		P_THIS->Death(); \
 		P_NATIVE_END; \
-	} \
+	}
+
+
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
  \
 	DECLARE_FUNCTION(execRegisterHit) \
 	{ \
@@ -62,10 +54,18 @@ struct FHitResult;
 		P_NATIVE_BEGIN; \
 		P_THIS->RegisterHit(Z_Param_HitComponent,Z_Param_OtherActor,Z_Param_OtherComponent,Z_Param_NormalImpulse,Z_Param_Out_Hit); \
 		P_NATIVE_END; \
+	} \
+ \
+	DECLARE_FUNCTION(execDeath) \
+	{ \
+		P_FINISH; \
+		P_NATIVE_BEGIN; \
+		P_THIS->Death(); \
+		P_NATIVE_END; \
 	}
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_INCLASS_NO_PURE_DECLS \
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUC_BallMinimum(); \
 	friend struct Z_Construct_UClass_UC_BallMinimum_Statics; \
@@ -74,7 +74,7 @@ public: \
 	DECLARE_SERIALIZER(UC_BallMinimum)
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_INCLASS \
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_INCLASS \
 private: \
 	static void StaticRegisterNativesUC_BallMinimum(); \
 	friend struct Z_Construct_UClass_UC_BallMinimum_Statics; \
@@ -83,7 +83,7 @@ public: \
 	DECLARE_SERIALIZER(UC_BallMinimum)
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_STANDARD_CONSTRUCTORS \
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UC_BallMinimum(const FObjectInitializer& ObjectInitializer); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UC_BallMinimum) \
@@ -96,7 +96,7 @@ private: \
 public:
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_ENHANCED_CONSTRUCTORS \
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 	/** Private move- and copy-constructors, should never be used */ \
 	NO_API UC_BallMinimum(UC_BallMinimum&&); \
@@ -107,26 +107,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UC_BallMinimum); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UC_BallMinimum)
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_PRIVATE_PROPERTY_OFFSET
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_10_PROLOG
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_GENERATED_BODY_LEGACY \
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_PRIVATE_PROPERTY_OFFSET
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_9_PROLOG
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_PRIVATE_PROPERTY_OFFSET \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_RPC_WRAPPERS \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_INCLASS \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_STANDARD_CONSTRUCTORS \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_PRIVATE_PROPERTY_OFFSET \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_RPC_WRAPPERS \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_INCLASS \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_GENERATED_BODY \
+#define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_PRIVATE_PROPERTY_OFFSET \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_RPC_WRAPPERS_NO_PURE_DECLS \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_INCLASS_NO_PURE_DECLS \
-	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_13_ENHANCED_CONSTRUCTORS \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_PRIVATE_PROPERTY_OFFSET \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_INCLASS_NO_PURE_DECLS \
+	RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

@@ -1,7 +1,6 @@
 #include "C_BallMinimum.h"
-#include "Components/InputComponent.h"
-#include "GameFramework/Actor.h"
 #include "Components/StaticMeshComponent.h"
+#include "GameFramework/Actor.h"
 #include "GameFramework/SpringArmComponent.h"
 
 
@@ -21,13 +20,27 @@ void UC_BallMinimum::BeginPlay()
 {
 	Super::BeginPlay();
 
-	//Assigning Visible Sphere ptr
 	TArray<UStaticMeshComponent*> StaticMeshComponents;
 	GetOwner()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
-	VisibleSphere = StaticMeshComponents[0]; //There's only one static mesh component, which is the visible sphere
+
+	for (int i = 0; i < StaticMeshComponents.Num(); i++)
+	{
+		//Assigning Visible Sphere ptr
+		if (StaticMeshComponents[i]->GetName() == "VisibleSphere")
+			VisibleSphere = StaticMeshComponents[i];
+
+		//Assigning Pilot Sphere ptr
+		else if (StaticMeshComponents[i]->GetName() == "PilotSphere")
+			PilotSphere = StaticMeshComponents[i];
+
+	}
+
+
+
+	//VisibleSphere = StaticMeshComponents[0]; //There's only one static mesh component, which is the visible sphere
 
 	//Assigning the Pilot Sphere ptr
-	PilotSphere = StaticMeshComponents[1];
+	//PilotSphere = StaticMeshComponents[1];
 	
 	//Assigning the Spring Arm
 	TArray<USpringArmComponent*> SpringArmComponents;

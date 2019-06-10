@@ -58,12 +58,18 @@
     <ClInclude Include="..\..\Source\RollossusMechanics\C_EnemyBall.h">
       <Filter>Source\RollossusMechanics</Filter>
     </ClInclude>
+    <ClInclude Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.cpp">
       <Filter>Source\RollossusMechanics</Filter>
     </ClCompile>
     <ClCompile Include="..\..\Source\RollossusMechanics\C_EnemyBall.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.cpp">
       <Filter>Source\RollossusMechanics</Filter>
     </ClCompile>
   </ItemGroup>

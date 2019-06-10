@@ -4,6 +4,11 @@
 
 #include "CoreMinimal.h"
 #include "Public/NavigationSystem.h"
+#include "Public/NavigationPath.h"
+#include "Public/TimerManager.h"
+#include "GameFramework/PlayerController.h"
+#include "Components/StaticMeshComponent.h"
+#include "Engine/World.h"
 #include "C_BallMinimum.h"
 #include "C_EnemyBallMinimum.generated.h"
 
@@ -24,19 +29,35 @@ protected:
 	//---------
 
 	APlayerController* PlayerController = nullptr;
+
+	//---------
+	//FUNCTIONS
+	//---------
+
+	///The enemy death function is a little different because you need to clear timers
+	void Death();
 	
 private:
 	//---------
 	//VARIABLES
 	//---------
 
+	//Handle for the timer for navigating paths to a location
+	FTimerHandle NavigationTimerHandle;
 
+	//Modify this to match how often we want to calculate the path to a location
+	float NavigationRecalculationFrequency = 1.0f;
 
+	UNavigationPath* PathToLocation;
+
+	FVector TargetLocation = FVector(0,0,50);
 	//---------
 	//FUNCTIONS
 	//---------
 
-	///Returns a UNavigationPath containing the points needed to locate the path to a player
-	UNavigationPath* GetPathToLocation(FVector Location);
+	///Sets PathTolocation containing the points needed to locate the path to TargetLocation - often the player
+	void GetPathToLocation();
+
+
 
 };

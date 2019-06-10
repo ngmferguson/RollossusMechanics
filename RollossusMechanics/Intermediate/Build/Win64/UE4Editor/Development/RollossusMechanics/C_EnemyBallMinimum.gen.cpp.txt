@@ -20,6 +20,8 @@ D:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\AI/Navi
 D:\Program Files\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\NavigationSystemBase.generated.h
 d:\program files\epic games\ue_4.22\engine\source\runtime\navigationsystem\public\NavigationOctree.h
 D:\Program Files\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NavigationSystem\NavigationSystem.generated.h
+D:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\NavigationSystem\Public/NavigationPath.h
+D:\Program Files\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\NavigationSystem\NavigationPath.generated.h
 d:\game repos\repos\rollossusmechanics\rollossusmechanics\source\rollossusmechanics\C_BallMinimum.h
 D:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
 D:\Program Files\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SpringArmComponent.generated.h
