@@ -19,11 +19,6 @@ protected:
 	// Called when the game starts
 	virtual void BeginPlay() override;
 
-public:	
-	// Called every frame
-	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
-
-private:
 	//---------
 	//VARIABLES
 	//---------
@@ -36,23 +31,24 @@ private:
 	float AirForce;
 	float TurningAid;
 
+public:	
+	// Called every frame
+	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
+
+private:
+	//---------
+	//VARIABLES
+	//---------
+
+
 	//The Input axis
 	float UpInput;
 	float RightInput;
 
-	//Input Component for the ball
-	UInputComponent *InputComponent = nullptr;
 
 	//---------
 	//FUNCTIONS
 	//---------
-
-
-	///Sets UpInput for movement
-	void SetUpInput(float AxisValue);
-
-	///Sets RightInput for movement
-	void SetRightInput(float AxisValue);
 
 	///Registers a hit to the object. Empty Definition because for now it doesn't do anything - will be implemented in child classes
 	UFUNCTION()

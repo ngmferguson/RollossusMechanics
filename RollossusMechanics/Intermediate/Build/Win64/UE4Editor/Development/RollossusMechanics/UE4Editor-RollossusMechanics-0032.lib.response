@@ -1,0 +1,20 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-RollossusMechanics-0032.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_BallMinimum.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_EnemyBallMinimum.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanics.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanicsGameModeBase.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_BallMinimum.gen.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_EnemyBallMinimum.gen.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanics.init.gen.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanicsGameModeBase.gen.cpp.obj"
+"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Default.rc2.res"
+/OUT:"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\UE4Editor-RollossusMechanics-0032.lib"
+/INCLUDE:IMPLEMENT_MODULE_RollossusMechanics

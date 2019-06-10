@@ -21,8 +21,8 @@ void EmptyLinkFunctionForGeneratedCodeRollossusMechanics_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xF01FB778,
-				0xC83E0A82,
+				0x076D0399,
+				0xF2215FE4,
 				METADATA_PARAMS(nullptr, 0)
 			};
 			UE4CodeGen_Private::ConstructUPackage(ReturnPackage, PackageParams);

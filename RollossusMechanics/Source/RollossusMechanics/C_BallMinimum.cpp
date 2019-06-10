@@ -21,12 +21,6 @@ void UC_BallMinimum::BeginPlay()
 {
 	Super::BeginPlay();
 
-	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
-
-	//Assigns the functions to set input axis for our UP and RIGHT values
-	InputComponent->BindAxis("UP", this, &UC_BallMinimum::SetUpInput);
-	InputComponent->BindAxis("RIGHT", this, &UC_BallMinimum::SetRightInput);
-
 	//Assigning Visible Sphere ptr
 	TArray<UStaticMeshComponent*> StaticMeshComponents;
 	GetOwner()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
@@ -52,11 +46,6 @@ void UC_BallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
-//Sets two floats, Up and Right, between -1 and 1 depending on axis input
-
-void UC_BallMinimum::SetUpInput(float AxisValue) {UpInput = AxisValue;}
-
-void UC_BallMinimum::SetRightInput(float AxisValue) {RightInput = AxisValue;}
 
 void UC_BallMinimum::RegisterHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit)
 {
