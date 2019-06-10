@@ -426,21 +426,21 @@
 /I ThirdParty
 /I ThirdParty\libSampleRate\Public
 /I ThirdParty\libSampleRate
-/I "D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Inc\RollossusMechanics"
-/I "D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Source"
-/I "D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Source\RollossusMechanics"
-/I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Community\VC\Tools\MSVC\14.16.27023\INCLUDE"
+/I "C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Inc\RollossusMechanics"
+/I "C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Source"
+/I "C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Source\RollossusMechanics"
+/I "C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC\Tools\MSVC\14.16.27023\INCLUDE"
 /I "C:\Program Files (x86)\Windows Kits\NETFXSDK\4.6.1\include\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\ucrt"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\shared"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\um"
-/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.17763.0\winrt"
-/FI"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h"
-/Yu"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h"
-/Fp"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h.pch"
-"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Source\RollossusMechanics\C_EnemyBallMinimum.cpp"
-/FI"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Definitions.RollossusMechanics.h"
-/Fo"D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_EnemyBallMinimum.cpp.obj"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\ucrt"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\shared"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\um"
+/I "C:\Program Files (x86)\Windows Kits\10\include\10.0.16299.0\winrt"
+/FI"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h"
+/Yu"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h"
+/Fp"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h.pch"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Source\RollossusMechanics\C_EnemyBallMinimum.cpp"
+/FI"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Definitions.RollossusMechanics.h"
+/Fo"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_EnemyBallMinimum.cpp.obj"
 /TP
 /GR-
 /W4

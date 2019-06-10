@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\RollossusMechanics.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{1601AF4A-7A7C-4734-B790-D9BE7EF2DD9D}</UniqueIdentifier>
+      <UniqueIdentifier>{95899DE4-8505-4607-BEBE-0A2AC85496C7}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\RollossusMechanics.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{195F16A0-8DB5-4687-9FF9-8455EE7ECD63}</UniqueIdentifier>
+      <UniqueIdentifier>{8FB52029-D1C6-4B84-A58E-7DD3ED83A015}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,12 +27,24 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\RollossusMechanics">
-      <UniqueIdentifier>{DD57B475-2F0C-47B1-A4C5-58D266BB3644}</UniqueIdentifier>
+      <UniqueIdentifier>{CB84CA20-051B-489A-81DA-96C2A8D33F10}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\RollossusMechanics\C_BallMinimum.cpp">
       <Filter>Source\RollossusMechanics</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\RollossusMechanics\C_BallMinimum.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.h">
       <Filter>Source\RollossusMechanics</Filter>
     </ClInclude>
     <None Include="..\..\Source\RollossusMechanics\RollossusMechanics.Build.cs">
@@ -50,27 +62,5 @@
     <ClInclude Include="..\..\Source\RollossusMechanics\RollossusMechanicsGameModeBase.h">
       <Filter>Source\RollossusMechanics</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.h">
-      <Filter>Source\RollossusMechanics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\RollossusMechanics\C_EnemyBall.h">
-      <Filter>Source\RollossusMechanics</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.h">
-      <Filter>Source\RollossusMechanics</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.cpp">
-      <Filter>Source\RollossusMechanics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\RollossusMechanics\C_EnemyBall.cpp">
-      <Filter>Source\RollossusMechanics</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.cpp">
-      <Filter>Source\RollossusMechanics</Filter>
-    </ClCompile>
   </ItemGroup>
 </Project>

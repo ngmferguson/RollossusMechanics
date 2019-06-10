@@ -33,7 +33,7 @@ private:
 	float RightInput;
 	float UpInput;
 
-	float RollingTorque = 80000000000.0f;
+	float RollingTorque = 80000000.0f;
 
 	///Returns a float from 0-1 on the different between two vectors. 0deg = 0, 180 deg = 1
 	float AngleBetweenVectors(FVector v1, FVector v2);

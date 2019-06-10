@@ -22,7 +22,7 @@ void UC_PlayerBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, F
 	{
 		//TODO: Use this, my man -- > FApp::GetDeltaTime
 		//TODO: Regulate with deltaTime
-		//PilotSphere->SetWorldRotation(GetRotationOfPilot(UpInput, RightInput));//GetRotationOfPilot sets the fwd vector of the pilot sphere to match control inputs
+		PilotSphere->SetWorldRotation(GetRotationOfPilot(UpInput, RightInput));//GetRotationOfPilot sets the fwd vector of the pilot sphere to match control inputs
 		VisibleSphere->SetAngularDamping(0.0f); //Lets ball roll freely
 		FVector PilotFwdVector = PilotSphere->GetRightVector();
 		PilotFwdVector.Normalize();
@@ -40,18 +40,18 @@ float UC_PlayerBallMinimum::AngleBetweenVectors(FVector v1, FVector v2)
 	return UKismetMathLibrary::DegAcos(vectorDot) / 180;
 }
 
-/*FRotator UC_PlayerBallMinimum::GetRotationOfPilot(float pitch, float yaw)
+FRotator UC_PlayerBallMinimum::GetRotationOfPilot(float pitch, float yaw)
 {
 	float SpringArmYaw = SpringArm->GetComponentRotation().Yaw;
 
 	//Get the X rotation from the pilot, basically when the controller faces upper right, so does the pilot sphere
-	FRotator PilotRotation = UKismetMathLibrary::MakeRotFromX(
-		FVector(pitch, yaw, 0).RotateAngleAxis(
-			SpringArm->GetComponentRotation().Yaw, //adjusts for rotation of cam
-			FVector(0, 0, 1))); //camera offset adjustment
+	FRotator PilotRotation = UKismetMathLibrary::MakeRotFromX(FVector(pitch, yaw, 0).RotateAngleAxis(SpringArm->GetComponentRotation().Yaw, FVector(0, 0, 0)));
+	
 
-	return PilotRotation;
-}*/
+	return PilotRotation;// PilotRotation;
+}
+
+
 
 void UC_PlayerBallMinimum::SetUpInput(float AxisValue) { UpInput = AxisValue; }
 

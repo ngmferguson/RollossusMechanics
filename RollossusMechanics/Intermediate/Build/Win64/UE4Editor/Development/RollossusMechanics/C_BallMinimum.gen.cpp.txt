@@ -1,7 +1,7 @@
-D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Definitions.RollossusMechanics.h
-D:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
-D:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
-D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Source\RollossusMechanics/C_BallMinimum.h
-D:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
-D:\Program Files\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SpringArmComponent.generated.h
-d:\game repos\repos\rollossusmechanics\rollossusmechanics\intermediate\build\win64\ue4editor\inc\rollossusmechanics\C_BallMinimum.generated.h
+C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Definitions.RollossusMechanics.h
+C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/GeneratedCppIncludes.h
+C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\CoreUObject\Public\UObject/MetaData.h
+C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Source\RollossusMechanics/C_BallMinimum.h
+C:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
+C:\Program Files\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SpringArmComponent.generated.h
+c:\users\nathaniel ferguson\documents\rollossusmechanics\rollossusmechanics\rollossusmechanics\intermediate\build\win64\ue4editor\inc\rollossusmechanics\C_BallMinimum.generated.h
