@@ -2,7 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "Components/ActorComponent.h"
-#include "Components/StaticMeshComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+#include "Components/InputComponent.h"
 #include "C_BallMinimum.generated.h"
 
 
@@ -23,17 +24,12 @@ public:
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
-
 	//---------
 	//VARIABLES
 	//---------
-
-	//References needed to make the ball roll correctly.
-	//For clarification on what a visible sphere and/or Pilot sphere are,
-		// Visit: https://www.gamasutra.com/blogs/NathanielFerguson/20181128/331577/Rolling_a_Ball_Harder_Than_You_Thought_part_1.php
-	UStaticMeshComponent *VisibleSphere;
-	UStaticMeshComponent *PilotSphere;
-	USpringArmComponent *SpringArm;
+	UStaticMeshComponent *VisibleSphere = nullptr;
+	UStaticMeshComponent *PilotSphere = nullptr;
+	USpringArmComponent *SpringArm = nullptr;
 
 	//Various movement values
 	float Torque;
@@ -41,8 +37,8 @@ private:
 	float TurningAid;
 
 	//The Input axis
-	float Up;
-	float Right;
+	float UpInput;
+	float RightInput;
 
 	//Input Component for the ball
 	UInputComponent *InputComponent = nullptr;
@@ -52,9 +48,17 @@ private:
 	//---------
 
 
-	///Sets UpInput
+	///Sets UpInput for movement
 	void SetUpInput(float AxisValue);
 
-	///Sets RightInput
+	///Sets RightInput for movement
 	void SetRightInput(float AxisValue);
+
+	///Registers a hit to the object. Empty Definition because for now it doesn't do anything - will be implemented in child classes
+	UFUNCTION()
+	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+
+	///Destroys the actor this component is attached to
+	UFUNCTION()
+	void Death();
 };

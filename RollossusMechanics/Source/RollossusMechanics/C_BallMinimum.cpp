@@ -1,6 +1,9 @@
 #include "C_BallMinimum.h"
-#include "GameFramework/SpringArmComponent.h"
 #include "Components/InputComponent.h"
+#include "GameFramework/Actor.h"
+#include "Components/StaticMeshComponent.h"
+#include "GameFramework/SpringArmComponent.h"
+
 
 // Sets default values for this component's properties
 UC_BallMinimum::UC_BallMinimum()
@@ -18,7 +21,7 @@ void UC_BallMinimum::BeginPlay()
 {
 	Super::BeginPlay();
 
-	UInputComponent *InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
 
 	//Assigns the functions to set input axis for our UP and RIGHT values
 	InputComponent->BindAxis("UP", this, &UC_BallMinimum::SetUpInput);
@@ -29,17 +32,16 @@ void UC_BallMinimum::BeginPlay()
 	GetOwner()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
 	VisibleSphere = StaticMeshComponents[0]; //There's only one static mesh component, which is the visible sphere
 
-	//Creating and assigning the pilot sphere
-	PilotSphere = NewObject<UStaticMeshComponent>(this, TEXT("PilotSphere")); //Initializes the pilot sphere
-	PilotSphere->AttachToComponent(GetOwner()->GetRootComponent(), FAttachmentTransformRules::KeepWorldTransform);
+	//Assigning the Pilot Sphere ptr
+	PilotSphere = StaticMeshComponents[1];
 	
-
 	//Assigning the Spring Arm
 	TArray<USpringArmComponent*> SpringArmComponents;
 	GetOwner()->GetComponents<USpringArmComponent>(SpringArmComponents);
 	SpringArm = SpringArmComponents[0]; //Only one spring arm component, assigned here.
 
 
+	VisibleSphere->OnComponentHit.AddDynamic(this, &UC_BallMinimum::RegisterHit); //Calls RegisterHit() whenever the visible sphere component is hit
 
 }
 
@@ -48,12 +50,22 @@ void UC_BallMinimum::BeginPlay()
 void UC_BallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
 }
 
 //Sets two floats, Up and Right, between -1 and 1 depending on axis input
 
-void UC_BallMinimum::SetUpInput(float AxisValue) {Up = AxisValue;}
+void UC_BallMinimum::SetUpInput(float AxisValue) {UpInput = AxisValue;}
 
-void UC_BallMinimum::SetRightInput(float AxisValue) {Right = AxisValue;}
+void UC_BallMinimum::SetRightInput(float AxisValue) {RightInput = AxisValue;}
+
+void UC_BallMinimum::RegisterHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit)
+{
+}
+
+void UC_BallMinimum::Death()
+{
+	GetOwner()->Destroy();
+}
+
+
 
