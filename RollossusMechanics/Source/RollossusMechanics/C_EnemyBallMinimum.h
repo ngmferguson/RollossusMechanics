@@ -3,6 +3,7 @@
 #pragma once
 
 #include "CoreMinimal.h"
+#include "Public/NavigationSystem.h"
 #include "C_BallMinimum.h"
 #include "C_EnemyBallMinimum.generated.h"
 
@@ -22,6 +23,20 @@ protected:
 	//VARIABLES
 	//---------
 
-	APlayerController* PlayerController;
+	APlayerController* PlayerController = nullptr;
 	
+private:
+	//---------
+	//VARIABLES
+	//---------
+
+
+
+	//---------
+	//FUNCTIONS
+	//---------
+
+	///Returns a UNavigationPath containing the points needed to locate the path to a player
+	UNavigationPath* GetPathToLocation(FVector Location);
+
 };

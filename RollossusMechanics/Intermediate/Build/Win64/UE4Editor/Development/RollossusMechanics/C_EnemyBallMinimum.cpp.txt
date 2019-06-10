@@ -1,7 +1,0 @@
-D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Definitions.RollossusMechanics.h
-d:\game repos\repos\rollossusmechanics\rollossusmechanics\source\rollossusmechanics\C_BallMinimum.h
-D:\Program Files\Epic Games\UE_4.22\Engine\Source\Runtime\Engine\Classes\GameFramework/SpringArmComponent.h
-D:\Program Files\Epic Games\UE_4.22\Engine\Intermediate\Build\Win64\UE4Editor\Inc\Engine\SpringArmComponent.generated.h
-D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Inc\RollossusMechanics\C_BallMinimum.generated.h
-d:\game repos\repos\rollossusmechanics\rollossusmechanics\source\rollossusmechanics\C_EnemyBallMinimum.h
-D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Inc\RollossusMechanics\C_EnemyBallMinimum.generated.h
