@@ -16,30 +16,41 @@ class ROLLOSSUSMECHANICS_API UC_PlayerBallMinimum : public UC_BallMinimum
 	GENERATED_BODY()
 
 protected:
+	///Our begin play component for the player ball
 	virtual void BeginPlay() override;
 
 
 public:
+	///Our tick component for the player ball
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;
 
 private:
-	//Input Component for the ball
+
+	//---------
+	//VARIABLES
+	//---------
+
+	///Input Component for the player ball
 	UInputComponent *InputComponent = nullptr;
 
+	///Sets the Up input
 	void SetUpInput(float AxisValue);
-
+	
 	void SetRightInput(float AxisValue);
 
+	//Declaring the values which will reflect the input axis value of our up and right vals
 	float RightInput = 0.f;
 	float UpInput = 0.f;
 
-	//The amount of force to add when player wants to change direction
+	///The amount of force to add when player wants to change direction
 	float TurnAid = 3000000.f;
 
-	///Returns a float from 0-1 on the different between two vectors. 0deg = 0, 180 deg = 1
+	//---------
+	//FUNCTIONS
+	//---------
+
 	float AngleBetweenVectors(FVector v1, FVector v2);
 
-	///GetRotationOfPilot takes the the Up/Right inputs and returns a rotation for the pilot sphere
 	FRotator GetRotationOfPilot(float pitch, float yaw);
 };
 

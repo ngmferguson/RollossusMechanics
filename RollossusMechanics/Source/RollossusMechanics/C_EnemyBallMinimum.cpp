@@ -19,19 +19,12 @@ void UC_EnemyBallMinimum::BeginPlay() {
 			UE_LOG(LogTemp, Error, TEXT("NO PLAYER CONTROLLER FOUND"));
 		}
 		else {
-			UE_LOG(LogTemp, Warning, TEXT("Player Controller Found"));
-
-			PlayerController = GetWorld()->GetFirstPlayerController();
-						
+			PlayerController = GetWorld()->GetFirstPlayerController();					
 		}
 	}
 
-
 	//Sets a timer to get the path to the target location every NavigationRecalculationFrequency seconds. Has a 1 second delay at first run.
 	GetWorld()->GetTimerManager().SetTimer(NavigationTimerHandle, this, &UC_EnemyBallMinimum::GetPathToLocation, NavigationRecalculationFrequency, true, 0.5f);
-
-	
-	
 }
 
 void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -42,7 +35,9 @@ void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FA
 }
 
 
-///Returns UNavigationPath to the player
+///<summary> Sets TargetLocation and PathToLocation.
+///<para> TargetLocation is the FVector of where we want to go</para>
+///<para> PathToLocation is a structure which has lots of pathfinding information, including an array of vectors, our path</para></summary>
 void UC_EnemyBallMinimum::GetPathToLocation()
 {
 	TArray<UStaticMeshComponent*> StaticMeshComponents;
@@ -53,28 +48,20 @@ void UC_EnemyBallMinimum::GetPathToLocation()
 			PlayerVisibleSphere = StaticMeshComponents[i];
 	}
 
-
-	//PlayerVisibleSphere = (UStaticMeshComponent*)PlayerController->GetPawn()->GetOwner()->GetDefaultSubobjectByName(TEXT("VisibleSphere"));
 	TargetLocation = PlayerVisibleSphere->GetComponentLocation(); //GetActorLocation();
 	UNavigationSystemV1* NavigationSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
 	PathToLocation = NavigationSystem->FindPathToLocationSynchronously(GetWorld(), VisibleSphere->GetComponentLocation(), TargetLocation);
-	if (PathToLocation->IsPartial()) {
-		UE_LOG(LogTemp, Error, TEXT("Partial Path"));
-	}
-	else {
-		UE_LOG(LogTemp, Warning, TEXT("Path Length: %d"), PathToLocation->PathPoints.Num());
-		UE_LOG(LogTemp, Warning, TEXT("Distance To Target: %f"), FVector::Dist(VisibleSphere->GetComponentLocation(), PlayerController->GetPawn()->GetActorLocation()));
-	}
-	
-
 }
 
+
+///<summary>Causes the enemy to die, specifically by destroying the object and clearing relevant timers</summary>
 void UC_EnemyBallMinimum::Death() {
 	//Clears our navigation timer
 	GetWorld()->GetTimerManager().ClearTimer(NavigationTimerHandle);
-	//Super::Death();
+	Super::Death();
 }
 
+///<summary>This function specifically causes our enemy to roll toward the TargetLocation</summary>
 void UC_EnemyBallMinimum::MoveToLocation()
 {
 	if (PathToLocation->PathPoints.Num() == 1)

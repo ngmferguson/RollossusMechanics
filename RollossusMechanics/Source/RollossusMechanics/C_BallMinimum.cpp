@@ -10,8 +10,6 @@ UC_BallMinimum::UC_BallMinimum()
 	// Set this component to be initialized when the game starts, and to be ticked every frame.  You can turn these features
 	// off to improve performance if you don't need them.
 	PrimaryComponentTick.bCanEverTick = true;
-
-	// ...
 }
 
 
@@ -45,8 +43,6 @@ void UC_BallMinimum::BeginPlay()
 
 }
 
-
-// Called every frame
 void UC_BallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
@@ -62,6 +58,7 @@ void UC_BallMinimum::RegisterHit(UPrimitiveComponent * HitComponent, AActor * Ot
 {
 }
 
+///<summary> This kills the Actor that the component is attached to </summary>
 void UC_BallMinimum::Death()
 {
 	GetOwner()->Destroy();

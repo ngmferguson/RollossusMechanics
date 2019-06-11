@@ -7,9 +7,10 @@ void UC_PlayerBallMinimum::BeginPlay() {
 
 	UInputComponent* InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
 	if (InputComponent == nullptr) {
-		UE_LOG(LogTemp, Fatal, TEXT("INPUT COMPONENT NOT GRABBED"));
+		UE_LOG(LogTemp, Fatal, TEXT("INPUT COMPONENT NOT GRABBED")); //Throws a fatal error to control our crashes
 	}
 
+	//Binds the axes for our up and right inputs to a function, so our UpInput and RightInput values are updated
 	InputComponent->BindAxis("UP", this, &UC_PlayerBallMinimum::SetUpInput);
 	InputComponent->BindAxis("RIGHT", this, &UC_PlayerBallMinimum::SetRightInput);
 }
@@ -22,7 +23,7 @@ void UC_PlayerBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, F
 		PilotSphere->SetWorldRotation(GetRotationOfPilot(UpInput, RightInput));//GetRotationOfPilot sets the fwd vector of the pilot sphere to match control inputs
 		VisibleSphere->SetAngularDamping(0.0f); //Lets ball roll freely
 		FVector PilotRightVector = (PilotSphere->GetRightVector());
-		PilotRightVector.Normalize();
+		PilotRightVector.Normalize(); //Teamwork makes the dream work, but Normalizing makes the physics work
 		VisibleSphere->AddTorqueInRadians(PilotRightVector * (RollingTorque * FApp::GetDeltaTime())); //The actual rolling of the ball
 
 		//Turn Aid
@@ -30,9 +31,12 @@ void UC_PlayerBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, F
 		FVector turnAssistVec = turnAssistAmount * TurnAid * PilotSphere->GetForwardVector(); //Regulates Delta Time here
 		VisibleSphere->AddForce(FVector(turnAssistVec.X * FApp::GetDeltaTime(), turnAssistVec.Y * DeltaTime, 0), FName(TEXT(""), true)); //application of turn assist
 	}
-
 }
 
+///<summary>Calculates the angle between two vectors and then returns a number between 0 and 1. 1 is 180degrees, 0 is 0 degrees.
+///<para>We use this so that the turn aid function has an easy percentage to use in turn aid</para></summary>
+///<param name="v1"> Our first vector </param>
+///<param name="v2"> Our second vector</param>
 float UC_PlayerBallMinimum::AngleBetweenVectors(FVector v1, FVector v2)
 {
 	v1 = v1.GetSafeNormal();
@@ -41,6 +45,12 @@ float UC_PlayerBallMinimum::AngleBetweenVectors(FVector v1, FVector v2)
 	return UKismetMathLibrary::DegAcos(vectorDot) / 180;
 }
 
+
+///<summary>GetRotationOfPilot takes the the Up/Right inputs and returns a rotation for the pilot sphere
+///<para>We can use this with a joystick and essentially have the pilot sphere point in the same direction the joystick is</para>
+///<para>This makes it easy to do controller inputs</para></summary>
+///<param name="pitch"> The pitch for our rotation </param>
+///<param name="yaw"> The yaw for our rotation</param>
 FRotator UC_PlayerBallMinimum::GetRotationOfPilot(float pitch, float yaw)
 {
 	float SpringArmYaw = SpringArm->GetComponentRotation().Yaw;
@@ -50,7 +60,7 @@ FRotator UC_PlayerBallMinimum::GetRotationOfPilot(float pitch, float yaw)
 }
 
 
-
+///<summary>Sets the Up Input</summary>
 void UC_PlayerBallMinimum::SetUpInput(float AxisValue) { UpInput = AxisValue; }
-
+///<summary>Sets the Right Input</summary>
 void UC_PlayerBallMinimum::SetRightInput(float AxisValue) { RightInput = AxisValue; }

@@ -39,7 +39,7 @@ protected:
 	//FUNCTIONS
 	//---------
 
-	///The enemy death function is a little different because you need to clear timers
+	///<summary> This function will destroy the Actor this component is attached to </summary>
 	void Death();
 
 	///Rolls the enemy ball toward the location calculated in GetPathToLocation
