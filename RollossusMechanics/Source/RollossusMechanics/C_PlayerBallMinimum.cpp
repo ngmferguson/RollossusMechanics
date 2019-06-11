@@ -5,7 +5,7 @@
 void UC_PlayerBallMinimum::BeginPlay() {
 	Super::BeginPlay(); // Parent BeginPlay assigned pointers for VisibleSphere, PilotSphere, and SpringArm. these are still relevant here.
 
-	InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
+	UInputComponent* InputComponent = GetOwner()->FindComponentByClass<UInputComponent>();
 	if (InputComponent == nullptr) {
 		UE_LOG(LogTemp, Fatal, TEXT("INPUT COMPONENT NOT GRABBED"));
 	}
@@ -20,14 +20,11 @@ void UC_PlayerBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, F
 
 	if (UpInput != 0 || RightInput != 0)
 	{
-		//TODO: Use this, my man -- > FApp::GetDeltaTime
-		//TODO: Regulate with deltaTime
 		PilotSphere->SetWorldRotation(GetRotationOfPilot(UpInput, RightInput));//GetRotationOfPilot sets the fwd vector of the pilot sphere to match control inputs
 		VisibleSphere->SetAngularDamping(0.0f); //Lets ball roll freely
-		FVector PilotFwdVector = PilotSphere->GetRightVector();
-		PilotFwdVector.Normalize();
-		VisibleSphere->AddTorqueInRadians(PilotFwdVector * (RollingTorque * FApp::GetDeltaTime())); //The actual rolling of the ball
-
+		FVector PilotRightVector = (PilotSphere->GetRightVector());
+		PilotRightVector.Normalize();
+		VisibleSphere->AddTorqueInRadians(PilotRightVector * (RollingTorque * FApp::GetDeltaTime())); //The actual rolling of the ball
 	}
 
 }
@@ -43,11 +40,9 @@ float UC_PlayerBallMinimum::AngleBetweenVectors(FVector v1, FVector v2)
 FRotator UC_PlayerBallMinimum::GetRotationOfPilot(float pitch, float yaw)
 {
 	float SpringArmYaw = SpringArm->GetComponentRotation().Yaw;
-
-	//Get the X rotation from the pilot, basically when the controller faces upper right, so does the pilot sphere
+	UE_LOG(LogTemp, Warning, TEXT("Spring arm Yaw: %f"), SpringArmYaw);
+	//Get the X rotation for the pilot, basically when the controller stick input faces upper right, so does the pilot sphere
 	FRotator PilotRotation = UKismetMathLibrary::MakeRotFromX(FVector(pitch, yaw, 0).RotateAngleAxis(SpringArm->GetComponentRotation().Yaw, FVector(0, 0, 0)));
-	
-
 	return PilotRotation;// PilotRotation;
 }
 

@@ -57,6 +57,11 @@ void UC_BallMinimum::BeginPlay()
 void UC_BallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+
+	//This is a fix to a non-perfect architecture for our ball. AS of now I haven't been able to find a better solution due to the way things
+		//rotate when childed in C++ and the way our pilot sphere is used to calculate the visible sphere direction.
+		//It's a pretty cheap operation, though.
+	PilotSphere->SetWorldLocation(VisibleSphere->GetComponentLocation());
 }
 
 
