@@ -40,7 +40,6 @@ float UC_PlayerBallMinimum::AngleBetweenVectors(FVector v1, FVector v2)
 FRotator UC_PlayerBallMinimum::GetRotationOfPilot(float pitch, float yaw)
 {
 	float SpringArmYaw = SpringArm->GetComponentRotation().Yaw;
-	UE_LOG(LogTemp, Warning, TEXT("Spring arm Yaw: %f"), SpringArmYaw);
 	//Get the X rotation for the pilot, basically when the controller stick input faces upper right, so does the pilot sphere
 	FRotator PilotRotation = UKismetMathLibrary::MakeRotFromX(FVector(pitch, yaw, 0).RotateAngleAxis(SpringArm->GetComponentRotation().Yaw, FVector(0, 0, 0)));
 	return PilotRotation;// PilotRotation;
