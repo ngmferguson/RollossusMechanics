@@ -17,7 +17,6 @@ void UC_PlayerBallMinimum::BeginPlay() {
 void UC_PlayerBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
 	if (UpInput != 0 || RightInput != 0)
 	{
 		PilotSphere->SetWorldRotation(GetRotationOfPilot(UpInput, RightInput));//GetRotationOfPilot sets the fwd vector of the pilot sphere to match control inputs
@@ -25,6 +24,11 @@ void UC_PlayerBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, F
 		FVector PilotRightVector = (PilotSphere->GetRightVector());
 		PilotRightVector.Normalize();
 		VisibleSphere->AddTorqueInRadians(PilotRightVector * (RollingTorque * FApp::GetDeltaTime())); //The actual rolling of the ball
+
+		//Turn Aid
+		float turnAssistAmount = AngleBetweenVectors(VisibleSphere->GetComponentVelocity(), PilotSphere->GetForwardVector());//float from 0-1 for % to turn assist
+		FVector turnAssistVec = turnAssistAmount * TurnAid * PilotSphere->GetForwardVector(); //Regulates Delta Time here
+		VisibleSphere->AddForce(FVector(turnAssistVec.X * FApp::GetDeltaTime(), turnAssistVec.Y * DeltaTime, 0), FName(TEXT(""), true)); //application of turn assist
 	}
 
 }
