@@ -45,8 +45,17 @@ void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FA
 ///Returns UNavigationPath to the player
 void UC_EnemyBallMinimum::GetPathToLocation()
 {
+	TArray<UStaticMeshComponent*> StaticMeshComponents;
+	PlayerController->GetPawn()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
+	for (int i = 0; i < StaticMeshComponents.Num(); i++)
+	{
+		if (StaticMeshComponents[i]->GetName() == "VisibleSphere")
+			PlayerVisibleSphere = StaticMeshComponents[i];
+	}
 
-	TargetLocation = PlayerController->GetPawn()->GetActorLocation();
+
+	//PlayerVisibleSphere = (UStaticMeshComponent*)PlayerController->GetPawn()->GetOwner()->GetDefaultSubobjectByName(TEXT("VisibleSphere"));
+	TargetLocation = PlayerVisibleSphere->GetComponentLocation(); //GetActorLocation();
 	UNavigationSystemV1* NavigationSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
 	PathToLocation = NavigationSystem->FindPathToLocationSynchronously(GetWorld(), VisibleSphere->GetComponentLocation(), TargetLocation);
 	if (PathToLocation->IsPartial()) {
