@@ -38,6 +38,8 @@ protected:
 	float AirForce;
 	float TurningAid;
 
+	float RollingTorque = 300000000.0f;
+
 public:	
 	// Called every frame
 	virtual void TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) override;

@@ -1,4 +1,5 @@
 #include "Engine/World.h"
+#include "TimerManager.h"
 #include "C_BallMinimum.h"
 #include "C_EnemyBallMinimum.h"
 
@@ -22,25 +23,43 @@ void UC_EnemyBallMinimum::BeginPlay() {
 		}
 	}
 
-	FTimerDynamicDelegate NavigationDynamicDelegate;
-	NavigationDynamicDelegate.BindUFunction(this, "GetPathToLocation");
-	//Sets a timer to get the path to the target location every NavigationRecalculationFrequency seconds. Has a 1 second delay at first run.
-	GetWorld()->GetTimerManager().SetTimer(NavigationTimerHandle, NavigationDynamicDelegate, false, 1.0f);
 
+	//Sets a timer to get the path to the target location every NavigationRecalculationFrequency seconds. Has a 1 second delay at first run.
+	GetWorld()->GetTimerManager().SetTimer(NavigationTimerHandle, this, &UC_EnemyBallMinimum::GetPathToLocation, NavigationRecalculationFrequency, true, 0.5f);
+
+	if (PathToLocation != nullptr && PathToLocation->GetPathLength() != 0)
+		MoveToLocation();
 }
 
 ///Returns UNavigationPath to the player
 void UC_EnemyBallMinimum::GetPathToLocation()
 {
-	UE_LOG(LogTemp, Warning, TEXT("CALCULATING PATH"));
+	TargetLocation = PlayerController->GetPawn()->GetActorLocation();
 	UNavigationSystemV1* NavigationSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
 	PathToLocation = NavigationSystem->FindPathToLocationSynchronously(GetWorld(), VisibleSphere->GetComponentLocation(), TargetLocation);
-	UE_LOG(LogTemp, Warning, TEXT("Path Length: %d"), PathToLocation->GetPathLength());
+	if (PathToLocation->IsPartial()) {
+		UE_LOG(LogTemp, Error, TEXT("Partial Path"));
+	}
+	else {
+		UE_LOG(LogTemp, Warning, TEXT("Path Length: %d"), PathToLocation->PathPoints.Num());
+		//UE_LOG(LogTemp, Warning, TEXT("Path End X: %d"), PathToLocation->PathPoints.Last().X);
+	}
+	
+
 }
 
 void UC_EnemyBallMinimum::Death() {
 	//Clears our navigation timer
 	GetWorld()->GetTimerManager().ClearTimer(NavigationTimerHandle);
+	//Super::Death();
+}
 
-	Super::Death();
+void UC_EnemyBallMinimum::MoveToLocation()
+{
+	UE_LOG(LogTemp, Warning, TEXT("Enemy Moving"));
+	FRotator PilotRotation = UKismetMathLibrary::FindLookAtRotation(VisibleSphere->GetComponentLocation(), PathToLocation->PathPoints[0]);
+	VisibleSphere->SetAngularDamping(0.0f); //Lets ball roll freely
+	FVector PilotRightVector = (PilotSphere->GetRightVector());
+	PilotRightVector.Normalize();
+	VisibleSphere->AddTorqueInRadians(PilotRightVector * (RollingTorque * FApp::GetDeltaTime())); //The actual rolling of the ball
 }

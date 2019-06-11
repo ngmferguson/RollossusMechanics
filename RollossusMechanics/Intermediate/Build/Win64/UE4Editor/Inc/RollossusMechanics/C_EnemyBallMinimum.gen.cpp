@@ -17,9 +17,38 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 	ROLLOSSUSMECHANICS_API UClass* Z_Construct_UClass_UC_EnemyBallMinimum();
 	ROLLOSSUSMECHANICS_API UClass* Z_Construct_UClass_UC_BallMinimum();
 	UPackage* Z_Construct_UPackage__Script_RollossusMechanics();
+	ROLLOSSUSMECHANICS_API UFunction* Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation();
 // End Cross Module References
 	void UC_EnemyBallMinimum::StaticRegisterNativesUC_EnemyBallMinimum()
 	{
+		UClass* Class = UC_EnemyBallMinimum::StaticClass();
+		static const FNameNativePtrPair Funcs[] = {
+			{ "GetPathToLocation", &UC_EnemyBallMinimum::execGetPathToLocation },
+		};
+		FNativeFunctionRegistrar::RegisterFunctions(Class, Funcs, ARRAY_COUNT(Funcs));
+	}
+	struct Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation_Statics
+	{
+#if WITH_METADATA
+		static const UE4CodeGen_Private::FMetaDataPairParam Function_MetaDataParams[];
+#endif
+		static const UE4CodeGen_Private::FFunctionParams FuncParams;
+	};
+#if WITH_METADATA
+	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation_Statics::Function_MetaDataParams[] = {
+		{ "ModuleRelativePath", "C_EnemyBallMinimum.h" },
+		{ "ToolTip", "Sets PathTolocation containing the points needed to locate the path to TargetLocation - often the player" },
+	};
+#endif
+	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UC_EnemyBallMinimum, nullptr, "GetPathToLocation", 0, nullptr, 0, RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00040401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation_Statics::Function_MetaDataParams)) };
+	UFunction* Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation()
+	{
+		static UFunction* ReturnFunction = nullptr;
+		if (!ReturnFunction)
+		{
+			UE4CodeGen_Private::ConstructUFunction(ReturnFunction, Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation_Statics::FuncParams);
+		}
+		return ReturnFunction;
 	}
 	UClass* Z_Construct_UClass_UC_EnemyBallMinimum_NoRegister()
 	{
@@ -28,6 +57,7 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 	struct Z_Construct_UClass_UC_EnemyBallMinimum_Statics
 	{
 		static UObject* (*const DependentSingletons[])();
+		static const FClassFunctionLinkInfo FuncInfo[];
 #if WITH_METADATA
 		static const UE4CodeGen_Private::FMetaDataPairParam Class_MetaDataParams[];
 #endif
@@ -37,6 +67,9 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 	UObject* (*const Z_Construct_UClass_UC_EnemyBallMinimum_Statics::DependentSingletons[])() = {
 		(UObject* (*)())Z_Construct_UClass_UC_BallMinimum,
 		(UObject* (*)())Z_Construct_UPackage__Script_RollossusMechanics,
+	};
+	const FClassFunctionLinkInfo Z_Construct_UClass_UC_EnemyBallMinimum_Statics::FuncInfo[] = {
+		{ &Z_Construct_UFunction_UC_EnemyBallMinimum_GetPathToLocation, "GetPathToLocation" }, // 1488132692
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UC_EnemyBallMinimum_Statics::Class_MetaDataParams[] = {
@@ -53,11 +86,11 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 		"Engine",
 		&StaticCppClassTypeInfo,
 		DependentSingletons,
-		nullptr,
+		FuncInfo,
 		nullptr,
 		nullptr,
 		ARRAY_COUNT(DependentSingletons),
-		0,
+		ARRAY_COUNT(FuncInfo),
 		0,
 		0,
 		0x00B000A4u,
@@ -72,7 +105,7 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UC_EnemyBallMinimum, 802382921);
+	IMPLEMENT_CLASS(UC_EnemyBallMinimum, 3541316492);
 	template<> ROLLOSSUSMECHANICS_API UClass* StaticClass<UC_EnemyBallMinimum>()
 	{
 		return UC_EnemyBallMinimum::StaticClass();

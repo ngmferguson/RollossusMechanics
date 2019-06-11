@@ -1,0 +1,22 @@
+/NOLOGO
+/errorReport:prompt
+/MACHINE:x64
+/SUBSYSTEM:WINDOWS
+/DEF
+/NAME:"UE4Editor-RollossusMechanics-3028.dll"
+/IGNORE:4221
+/NODEFAULTLIB
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\RollossusMechanicsEditor\Development\Engine\SharedPCH.Engine.h.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_BallMinimum.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_EnemyBallMinimum.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_PlayerBallMinimum.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanics.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanicsGameModeBase.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_BallMinimum.gen.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_EnemyBallMinimum.gen.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\C_PlayerBallMinimum.gen.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanics.init.gen.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\RollossusMechanicsGameModeBase.gen.cpp.obj"
+"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Default.rc2.res"
+/OUT:"C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\UE4Editor-RollossusMechanics-3028.lib"
+/INCLUDE:IMPLEMENT_MODULE_RollossusMechanics

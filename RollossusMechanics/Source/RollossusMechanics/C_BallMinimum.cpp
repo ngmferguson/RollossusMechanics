@@ -34,13 +34,6 @@ void UC_BallMinimum::BeginPlay()
 			PilotSphere = StaticMeshComponents[i];
 
 	}
-
-
-
-	//VisibleSphere = StaticMeshComponents[0]; //There's only one static mesh component, which is the visible sphere
-
-	//Assigning the Pilot Sphere ptr
-	//PilotSphere = StaticMeshComponents[1];
 	
 	//Assigning the Spring Arm
 	TArray<USpringArmComponent*> SpringArmComponents;

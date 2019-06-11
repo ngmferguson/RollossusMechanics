@@ -5,6 +5,8 @@
 #include "CoreMinimal.h"
 #include "Public/NavigationSystem.h"
 #include "Public/NavigationPath.h"
+#include "Kismet/KismetMathLibrary.h"
+#include "TimerManager.h"
 #include "Public/TimerManager.h"
 #include "GameFramework/PlayerController.h"
 #include "Components/StaticMeshComponent.h"
@@ -36,6 +38,9 @@ protected:
 
 	///The enemy death function is a little different because you need to clear timers
 	void Death();
+
+	///Rolls the enemy ball toward the location calculated in GetPathToLocation
+	void MoveToLocation();
 	
 private:
 	//---------
@@ -48,7 +53,7 @@ private:
 	//Modify this to match how often we want to calculate the path to a location
 	float NavigationRecalculationFrequency = 1.0f;
 
-	UNavigationPath* PathToLocation;
+	UNavigationPath* PathToLocation = nullptr;
 
 	FVector TargetLocation = FVector(0,0,50);
 	//---------
@@ -56,6 +61,7 @@ private:
 	//---------
 
 	///Sets PathTolocation containing the points needed to locate the path to TargetLocation - often the player
+	UFUNCTION()
 	void GetPathToLocation();
 
 
