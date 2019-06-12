@@ -48,7 +48,7 @@ void UC_EnemyBallMinimum::GetPathToLocation()
 			PlayerVisibleSphere = StaticMeshComponents[i];
 	}
 
-	TargetLocation = PlayerVisibleSphere->GetComponentLocation(); //GetActorLocation();
+	TargetLocation = (PlayerVisibleSphere->GetComponentLocation()) + (PlayerVisibleSphere->GetComponentVelocity() * LeadTime);
 	UNavigationSystemV1* NavigationSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
 	PathToLocation = NavigationSystem->FindPathToLocationSynchronously(GetWorld(), VisibleSphere->GetComponentLocation(), TargetLocation);
 }
@@ -64,7 +64,9 @@ void UC_EnemyBallMinimum::Death() {
 ///<summary>This function specifically causes our enemy to roll toward the TargetLocation</summary>
 void UC_EnemyBallMinimum::MoveToLocation()
 {
-	if (PathToLocation->PathPoints.Num() == 1)
+	if (PathToLocation->PathPoints.Num() == 0)
+		return; //Avoids crashes :)
+	else if (PathToLocation->PathPoints.Num() == 1)
 		PilotSphere->SetWorldRotation(UKismetMathLibrary::FindLookAtRotation(VisibleSphere->GetComponentLocation(), PathToLocation->PathPoints[0]));// PlayerController->GetPawn()->GetActorLocation()));
 	else
 		PilotSphere->SetWorldRotation(UKismetMathLibrary::FindLookAtRotation(VisibleSphere->GetComponentLocation(), PathToLocation->PathPoints[1]));// PlayerController->GetPawn()->GetActorLocation()));

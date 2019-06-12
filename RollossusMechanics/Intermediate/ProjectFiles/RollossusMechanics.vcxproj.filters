@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\RollossusMechanics.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{21C434CE-90CA-4D0C-839E-926C04BA1F1D}</UniqueIdentifier>
+      <UniqueIdentifier>{B5FE0C3A-3085-4398-9B61-BCA137E5F57D}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\RollossusMechanics.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{5846DEBD-06EE-4E79-9C73-E339D0F0FB97}</UniqueIdentifier>
+      <UniqueIdentifier>{29EA69CF-2D37-4D6F-AB2C-45ED922EA443}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\RollossusMechanics">
-      <UniqueIdentifier>{26C2846E-7756-4D73-8DBD-CE9CFCDAD84B}</UniqueIdentifier>
+      <UniqueIdentifier>{08DB3878-4693-46EB-B58B-9502AC692158}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\RollossusMechanics\C_BallMinimum.cpp">
       <Filter>Source\RollossusMechanics</Filter>

@@ -1,2 +1,2 @@
-D:\Game Repos\repos\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Definitions.RollossusMechanics.h
-d:\game repos\repos\rollossusmechanics\rollossusmechanics\source\rollossusmechanics\RollossusMechanics.h
+C:\Users\Nathaniel Ferguson\Documents\RollossusMechanics\RollossusMechanics\RollossusMechanics\Intermediate\Build\Win64\UE4Editor\Development\RollossusMechanics\Definitions.RollossusMechanics.h
+c:\users\nathaniel ferguson\documents\rollossusmechanics\rollossusmechanics\rollossusmechanics\source\rollossusmechanics\RollossusMechanics.h

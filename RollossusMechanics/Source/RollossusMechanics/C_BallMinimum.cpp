@@ -56,6 +56,7 @@ void UC_BallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 
 void UC_BallMinimum::RegisterHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit)
 {
+	return;
 }
 
 ///<summary> This kills the Actor that the component is attached to </summary>

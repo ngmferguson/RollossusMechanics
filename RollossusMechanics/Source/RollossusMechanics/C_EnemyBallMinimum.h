@@ -35,6 +35,9 @@ protected:
 	APlayerController* PlayerController = nullptr;
 	UStaticMeshComponent* PlayerVisibleSphere;
 
+	///The amount of time (in seconds) to lead the player by for "predictive" pathfinding
+	float LeadTime = 0.1;
+
 	//---------
 	//FUNCTIONS
 	//---------
