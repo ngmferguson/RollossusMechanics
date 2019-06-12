@@ -63,4 +63,14 @@
       <Filter>Source\RollossusMechanics</Filter>
     </ClInclude>
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Source\RollossusMechanics\C_LeechBall.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\Source\RollossusMechanics\C_LeechBall.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+  </ItemGroup>
 </Project>
