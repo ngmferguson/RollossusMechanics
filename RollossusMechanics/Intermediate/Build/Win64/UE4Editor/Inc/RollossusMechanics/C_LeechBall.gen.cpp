@@ -40,7 +40,11 @@ void EmptyLinkFunctionForGeneratedCodeC_LeechBall() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UC_LeechBall_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintSpawnableComponent", "" },
+		{ "BlueprintType", "true" },
+		{ "ClassGroupNames", "Custom" },
 		{ "IncludePath", "C_LeechBall.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "C_LeechBall.h" },
 		{ "ToolTip", "The leech ball behaves very similarly to the basic enemy, except instead of trying to hit the player to deal damage,\n       the leech will hit the player to stick on for an amount of time before dying. The goal of this is to impede the player's\n       movement, making them more exposed to taking damage" },
 	};
@@ -72,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeC_LeechBall() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UC_LeechBall, 1142161679);
+	IMPLEMENT_CLASS(UC_LeechBall, 435246891);
 	template<> ROLLOSSUSMECHANICS_API UClass* StaticClass<UC_LeechBall>()
 	{
 		return UC_LeechBall::StaticClass();

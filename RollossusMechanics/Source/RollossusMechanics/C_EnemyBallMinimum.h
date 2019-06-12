@@ -18,7 +18,7 @@
  *This is the Enemy-Specific class for this. This will contain basic functions such as navigating to the player, and dealing damage on hit.
 	there will be more classes for specific enemies.
  */
-UCLASS()
+UCLASS(Blueprintable, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class ROLLOSSUSMECHANICS_API UC_EnemyBallMinimum : public UC_BallMinimum
 {
 	GENERATED_BODY()

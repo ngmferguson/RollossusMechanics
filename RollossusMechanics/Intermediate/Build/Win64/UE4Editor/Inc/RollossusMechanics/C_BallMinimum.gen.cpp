@@ -116,7 +116,7 @@ void EmptyLinkFunctionForGeneratedCodeC_BallMinimum() {}
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UFunction_UC_BallMinimum_RegisterHit_Statics::Function_MetaDataParams[] = {
 		{ "ModuleRelativePath", "C_BallMinimum.h" },
-		{ "ToolTip", "Registers a hit to the object. Empty Definition because for now it doesn't do anything - will be implemented in child classes" },
+		{ "ToolTip", "Registers a hit to the object. Empty for now. TODO: Make it not empty" },
 	};
 #endif
 	const UE4CodeGen_Private::FFunctionParams Z_Construct_UFunction_UC_BallMinimum_RegisterHit_Statics::FuncParams = { (UObject*(*)())Z_Construct_UClass_UC_BallMinimum, nullptr, "RegisterHit", sizeof(C_BallMinimum_eventRegisterHit_Parms), Z_Construct_UFunction_UC_BallMinimum_RegisterHit_Statics::PropPointers, ARRAY_COUNT(Z_Construct_UFunction_UC_BallMinimum_RegisterHit_Statics::PropPointers), RF_Public|RF_Transient|RF_MarkAsNative, (EFunctionFlags)0x00C40401, 0, 0, METADATA_PARAMS(Z_Construct_UFunction_UC_BallMinimum_RegisterHit_Statics::Function_MetaDataParams, ARRAY_COUNT(Z_Construct_UFunction_UC_BallMinimum_RegisterHit_Statics::Function_MetaDataParams)) };
@@ -149,7 +149,7 @@ void EmptyLinkFunctionForGeneratedCodeC_BallMinimum() {}
 	};
 	const FClassFunctionLinkInfo Z_Construct_UClass_UC_BallMinimum_Statics::FuncInfo[] = {
 		{ &Z_Construct_UFunction_UC_BallMinimum_Death, "Death" }, // 3272756414
-		{ &Z_Construct_UFunction_UC_BallMinimum_RegisterHit, "RegisterHit" }, // 828540235
+		{ &Z_Construct_UFunction_UC_BallMinimum_RegisterHit, "RegisterHit" }, // 218466478
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UC_BallMinimum_Statics::Class_MetaDataParams[] = {
@@ -186,7 +186,7 @@ void EmptyLinkFunctionForGeneratedCodeC_BallMinimum() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UC_BallMinimum, 3804292242);
+	IMPLEMENT_CLASS(UC_BallMinimum, 669706428);
 	template<> ROLLOSSUSMECHANICS_API UClass* StaticClass<UC_BallMinimum>()
 	{
 		return UC_BallMinimum::StaticClass();

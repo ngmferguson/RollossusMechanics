@@ -13,9 +13,9 @@ PRAGMA_DISABLE_DEPRECATION_WARNINGS
 #endif
 #define ROLLOSSUSMECHANICS_C_LeechBall_generated_h
 
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_RPC_WRAPPERS
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_RPC_WRAPPERS_NO_PURE_DECLS
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_INCLASS_NO_PURE_DECLS \
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_RPC_WRAPPERS
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_RPC_WRAPPERS_NO_PURE_DECLS
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_INCLASS_NO_PURE_DECLS \
 private: \
 	static void StaticRegisterNativesUC_LeechBall(); \
 	friend struct Z_Construct_UClass_UC_LeechBall_Statics; \
@@ -24,7 +24,7 @@ public: \
 	DECLARE_SERIALIZER(UC_LeechBall)
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_INCLASS \
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_INCLASS \
 private: \
 	static void StaticRegisterNativesUC_LeechBall(); \
 	friend struct Z_Construct_UClass_UC_LeechBall_Statics; \
@@ -33,7 +33,7 @@ public: \
 	DECLARE_SERIALIZER(UC_LeechBall)
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_STANDARD_CONSTRUCTORS \
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_STANDARD_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UC_LeechBall(const FObjectInitializer& ObjectInitializer = FObjectInitializer::Get()); \
 	DEFINE_DEFAULT_OBJECT_INITIALIZER_CONSTRUCTOR_CALL(UC_LeechBall) \
@@ -46,7 +46,7 @@ private: \
 public:
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_ENHANCED_CONSTRUCTORS \
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_ENHANCED_CONSTRUCTORS \
 	/** Standard constructor, called after all reflected properties have been initialized */ \
 	NO_API UC_LeechBall() { }; \
 private: \
@@ -59,26 +59,26 @@ DEFINE_VTABLE_PTR_HELPER_CTOR_CALLER(UC_LeechBall); \
 	DEFINE_DEFAULT_CONSTRUCTOR_CALL(UC_LeechBall)
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_PRIVATE_PROPERTY_OFFSET
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_14_PROLOG
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_GENERATED_BODY_LEGACY \
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_PRIVATE_PROPERTY_OFFSET
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_12_PROLOG
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_GENERATED_BODY_LEGACY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_PRIVATE_PROPERTY_OFFSET \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_RPC_WRAPPERS \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_INCLASS \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_STANDARD_CONSTRUCTORS \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_PRIVATE_PROPERTY_OFFSET \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_RPC_WRAPPERS \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_INCLASS \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_STANDARD_CONSTRUCTORS \
 public: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 
 
-#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_GENERATED_BODY \
+#define RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_GENERATED_BODY \
 PRAGMA_DISABLE_DEPRECATION_WARNINGS \
 public: \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_PRIVATE_PROPERTY_OFFSET \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_RPC_WRAPPERS_NO_PURE_DECLS \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_INCLASS_NO_PURE_DECLS \
-	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_17_ENHANCED_CONSTRUCTORS \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_PRIVATE_PROPERTY_OFFSET \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_RPC_WRAPPERS_NO_PURE_DECLS \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_INCLASS_NO_PURE_DECLS \
+	RollossusMechanics_Source_RollossusMechanics_C_LeechBall_h_15_ENHANCED_CONSTRUCTORS \
 private: \
 PRAGMA_ENABLE_DEPRECATION_WARNINGS
 

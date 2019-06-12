@@ -40,7 +40,11 @@ void EmptyLinkFunctionForGeneratedCodeC_PlayerBallMinimum() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UC_PlayerBallMinimum_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintSpawnableComponent", "" },
+		{ "BlueprintType", "true" },
+		{ "ClassGroupNames", "Custom" },
 		{ "IncludePath", "C_PlayerBallMinimum.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "C_PlayerBallMinimum.h" },
 		{ "ToolTip", "The playerball version of BallMinimum. This will be possessed by the player and be the thing the player can actually control." },
 	};
@@ -72,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeC_PlayerBallMinimum() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UC_PlayerBallMinimum, 1868570647);
+	IMPLEMENT_CLASS(UC_PlayerBallMinimum, 3605505502);
 	template<> ROLLOSSUSMECHANICS_API UClass* StaticClass<UC_PlayerBallMinimum>()
 	{
 		return UC_PlayerBallMinimum::StaticClass();

@@ -1,5 +1,3 @@
-// Fill out your copyright notice in the Description page of Project Settings.
-
 #pragma once
 
 #include "CoreMinimal.h"
@@ -11,7 +9,7 @@
 	the leech will hit the player to stick on for an amount of time before dying. The goal of this is to impede the player's
 	movement, making them more exposed to taking damage
  */
-UCLASS()
+UCLASS(Blueprintable, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class ROLLOSSUSMECHANICS_API UC_LeechBall : public UC_EnemyBallMinimum
 {
 	GENERATED_BODY()
@@ -20,5 +18,8 @@ public:
 protected:
 	virtual void BeginPlay() override;
 private:
+
+	///Registers a hit to the object. Will then stick to the player.
+	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
 };

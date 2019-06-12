@@ -21,7 +21,7 @@ void EmptyLinkFunctionForGeneratedCodeRollossusMechanics_init() {}
 				nullptr,
 				0,
 				PKG_CompiledIn | 0x00000000,
-				0xD1833479,
+				0xA0C34DD9,
 				0x8BDC783F,
 				METADATA_PARAMS(nullptr, 0)
 			};

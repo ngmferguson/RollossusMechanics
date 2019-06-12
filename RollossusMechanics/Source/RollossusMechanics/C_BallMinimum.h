@@ -58,7 +58,7 @@ private:
 	//FUNCTIONS
 	//---------
 
-	///Registers a hit to the object. Empty Definition because for now it doesn't do anything - will be implemented in child classes
+	///Registers a hit to the object. Empty for now. TODO: Make it not empty
 	UFUNCTION()
 	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
