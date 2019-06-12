@@ -19,7 +19,16 @@ void UC_EnemyBallMinimum::BeginPlay() {
 			UE_LOG(LogTemp, Error, TEXT("NO PLAYER CONTROLLER FOUND"));
 		}
 		else {
-			PlayerController = GetWorld()->GetFirstPlayerController();					
+			PlayerController = GetWorld()->GetFirstPlayerController();
+
+			//Grabbing the visible sphere component of the player ball
+			TArray<UStaticMeshComponent*> StaticMeshComponents;
+			PlayerController->GetPawn()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
+			for (int j = 0; j < StaticMeshComponents.Num(); j++)
+			{
+				if (StaticMeshComponents[j]->GetName() == "VisibleSphere")
+					PlayerVisibleSphere = StaticMeshComponents[j];
+			}
 		}
 	}
 
@@ -40,15 +49,7 @@ void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FA
 ///<para> PathToLocation is a structure which has lots of pathfinding information, including an array of vectors, our path</para></summary>
 void UC_EnemyBallMinimum::GetPathToLocation()
 {
-	TArray<UStaticMeshComponent*> StaticMeshComponents;
-	PlayerController->GetPawn()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
-	for (int i = 0; i < StaticMeshComponents.Num(); i++)
-	{
-		if (StaticMeshComponents[i]->GetName() == "VisibleSphere")
-			PlayerVisibleSphere = StaticMeshComponents[i];
-	}
-
-	TargetLocation = (PlayerVisibleSphere->GetComponentLocation()) + (PlayerVisibleSphere->GetComponentVelocity() * LeadTime);
+	TargetLocation = (PlayerVisibleSphere->GetComponentLocation()) + (PlayerVisibleSphere->GetComponentVelocity() * LeadTime); //This adjusts for the player's velocity
 	UNavigationSystemV1* NavigationSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
 	PathToLocation = NavigationSystem->FindPathToLocationSynchronously(GetWorld(), VisibleSphere->GetComponentLocation(), TargetLocation);
 }

@@ -38,7 +38,7 @@ protected:
 	float AirForce;
 	float TurningAid;
 
-	float RollingTorque = 2000000000.0f;
+	float RollingTorque = 800000000.0f;
 
 public:	
 	// Called every frame
