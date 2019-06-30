@@ -2,6 +2,8 @@
 
 #include "CoreMinimal.h"
 #include "C_EnemyBallMinimum.h"
+#include "Engine/Classes/PhysicsEngine/ConstraintInstance.h"
+#include "Engine/Classes/PhysicsEngine/PhysicsConstraintComponent.h"
 #include "C_LeechBall.generated.h"
 
 /**
@@ -22,5 +24,9 @@ private:
 	///Registers a hit to the object. Will then stick to the player.
 	UFUNCTION()
 	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
+
+	///Connects a component to this enemy's visible sphere
+	void ConstrainTwoComponents(UPrimitiveComponent* ConstrainedComponent);
+
 
 };
