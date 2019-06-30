@@ -76,7 +76,7 @@ void EmptyLinkFunctionForGeneratedCodeC_PlayerBallMinimum() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UC_PlayerBallMinimum, 3605505502);
+	IMPLEMENT_CLASS(UC_PlayerBallMinimum, 1499982297);
 	template<> ROLLOSSUSMECHANICS_API UClass* StaticClass<UC_PlayerBallMinimum>()
 	{
 		return UC_PlayerBallMinimum::StaticClass();

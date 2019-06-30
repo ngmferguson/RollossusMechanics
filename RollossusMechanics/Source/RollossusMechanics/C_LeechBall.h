@@ -20,7 +20,7 @@ protected:
 private:
 
 	///Registers a hit to the object. Will then stick to the player.
-	
+	UFUNCTION()
 	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
 };

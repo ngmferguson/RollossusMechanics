@@ -109,7 +109,7 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UC_EnemyBallMinimum, 920191797);
+	IMPLEMENT_CLASS(UC_EnemyBallMinimum, 3425355748);
 	template<> ROLLOSSUSMECHANICS_API UClass* StaticClass<UC_EnemyBallMinimum>()
 	{
 		return UC_EnemyBallMinimum::StaticClass();
