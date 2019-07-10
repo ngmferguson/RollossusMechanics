@@ -12,7 +12,7 @@ void UC_LeechBall::BeginPlay() {
 }
 
 void UC_LeechBall::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) {
-	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
+		Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
 }
 
 void UC_LeechBall::RegisterHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit)
@@ -20,18 +20,25 @@ void UC_LeechBall::RegisterHit(UPrimitiveComponent * HitComponent, AActor * Othe
 	if (OtherComponent == PlayerVisibleSphere)
 	{
 		UE_LOG(LogTemp, Warning, TEXT("Leech Hit Player"));
-		ConstrainTwoComponents(OtherComponent);
+
+		if (ConstrainTwoComponents(OtherComponent)) //Ensures the leech is actually constrained to the player
+		{
+			IsBallNavigating = false; //Stops navigation behaviors in parent function
+		}
 	}
 }
-
-void UC_LeechBall::ConstrainTwoComponents(UPrimitiveComponent * ConstrainedComponent)
+///<summary> Constrains this ball to the passed variable, ConstrainedComponent
+///<para> ConstrainedComponent is the component which we want to tie with a physics constraint to this object</para></summary>
+bool UC_LeechBall::ConstrainTwoComponents(UPrimitiveComponent * ConstrainedComponent)
 {
 	FConstraintInstance ConstraintInstance;
 
-	UPhysicsConstraintComponent *PhysConstraintComp =
-		NewObject<UPhysicsConstraintComponent>();
-	if (!PhysConstraintComp)
+	UPhysicsConstraintComponent *PhysConstraintComp = NewObject<UPhysicsConstraintComponent>(); //Initializing the physics constraint component
+	if (!PhysConstraintComp) //Ducks any potential errors in initialization
+	{
 		UE_LOG(LogTemp, Fatal, TEXT("PhysConstraintComp was not created in LeechBall.cpp"));
+		return false;
+	}
 
 	//Sets the constraint instance
 	PhysConstraintComp->ConstraintInstance = ConstraintInstance;
@@ -45,4 +52,9 @@ void UC_LeechBall::ConstrainTwoComponents(UPrimitiveComponent * ConstrainedCompo
 	//Initialize the constraint
 	PhysConstraintComp->SetConstrainedComponents(VisibleSphere, NAME_None, ConstrainedComponent, NAME_None);
 
+	PhysConstraintComp->SetLinearXLimit(ELinearConstraintMotion::LCM_Locked, 10); //
+	PhysConstraintComp->SetLinearYLimit(ELinearConstraintMotion::LCM_Locked, 10); //   Locks the Leech into place
+	PhysConstraintComp->SetLinearZLimit(ELinearConstraintMotion::LCM_Locked, 10); //
+
+	return true;
 }

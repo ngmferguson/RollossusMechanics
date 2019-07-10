@@ -39,7 +39,7 @@ void UC_EnemyBallMinimum::BeginPlay() {
 void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	if (PathToLocation != nullptr && PathToLocation->PathPoints.Num() > 0)
+	if (IsBallNavigating && PathToLocation != nullptr && PathToLocation->PathPoints.Num() > 0) //Ducks null pointers, and ensures we want the ball to navigate
 		MoveToLocation();
 }
 

@@ -26,7 +26,6 @@ private:
 	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
 
 	///Connects a component to this enemy's visible sphere
-	void ConstrainTwoComponents(UPrimitiveComponent* ConstrainedComponent);
-
+	bool ConstrainTwoComponents(UPrimitiveComponent* ConstrainedComponent);
 
 };

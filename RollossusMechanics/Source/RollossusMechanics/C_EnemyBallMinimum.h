@@ -35,6 +35,8 @@ protected:
 	APlayerController* PlayerController = nullptr;
 	UStaticMeshComponent* PlayerVisibleSphere;
 
+	bool IsBallNavigating = true; //Allows us to stop specific enemies from navigating
+
 	///The amount of time (in seconds) to lead the player by for "predictive" pathfinding
 	float LeadTime = 0.1;
 
