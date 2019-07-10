@@ -3,7 +3,7 @@
   <ItemGroup>
     <None Include="..\..\RollossusMechanics.uproject" />
     <Filter Include="Source">
-      <UniqueIdentifier>{21C434CE-90CA-4D0C-839E-926C04BA1F1D}</UniqueIdentifier>
+      <UniqueIdentifier>{85CC4E46-C9F6-4675-8739-E50C70A36811}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Source\RollossusMechanics.Target.cs">
       <Filter>Source</Filter>
@@ -12,7 +12,7 @@
       <Filter>Source</Filter>
     </None>
     <Filter Include="Config">
-      <UniqueIdentifier>{5846DEBD-06EE-4E79-9C73-E339D0F0FB97}</UniqueIdentifier>
+      <UniqueIdentifier>{8AD12A01-7EED-4292-98F4-9D90F5D9CF0F}</UniqueIdentifier>
     </Filter>
     <None Include="..\..\Config\DefaultEditor.ini">
       <Filter>Config</Filter>
@@ -27,7 +27,7 @@
       <Filter>Config</Filter>
     </None>
     <Filter Include="Source\RollossusMechanics">
-      <UniqueIdentifier>{26C2846E-7756-4D73-8DBD-CE9CFCDAD84B}</UniqueIdentifier>
+      <UniqueIdentifier>{FF6E27EF-152D-4343-BBB3-29055305F103}</UniqueIdentifier>
     </Filter>
     <ClCompile Include="..\..\Source\RollossusMechanics\C_BallMinimum.cpp">
       <Filter>Source\RollossusMechanics</Filter>
@@ -39,6 +39,12 @@
       <Filter>Source\RollossusMechanics</Filter>
     </ClCompile>
     <ClInclude Include="..\..\Source\RollossusMechanics\C_EnemyBallMinimum.h">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClInclude>
+    <ClCompile Include="..\..\Source\RollossusMechanics\C_LeechBall.cpp">
+      <Filter>Source\RollossusMechanics</Filter>
+    </ClCompile>
+    <ClInclude Include="..\..\Source\RollossusMechanics\C_LeechBall.h">
       <Filter>Source\RollossusMechanics</Filter>
     </ClInclude>
     <ClCompile Include="..\..\Source\RollossusMechanics\C_PlayerBallMinimum.cpp">

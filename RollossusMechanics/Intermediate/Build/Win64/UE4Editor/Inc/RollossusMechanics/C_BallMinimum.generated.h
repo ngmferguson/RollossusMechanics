@@ -8,29 +8,12 @@
 #include "UObject/ScriptMacros.h"
 
 PRAGMA_DISABLE_DEPRECATION_WARNINGS
-class UPrimitiveComponent;
-class AActor;
-struct FVector;
-struct FHitResult;
 #ifdef ROLLOSSUSMECHANICS_C_BallMinimum_generated_h
 #error "C_BallMinimum.generated.h already included, missing '#pragma once' in C_BallMinimum.h"
 #endif
 #define ROLLOSSUSMECHANICS_C_BallMinimum_generated_h
 
 #define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_RPC_WRAPPERS \
- \
-	DECLARE_FUNCTION(execRegisterHit) \
-	{ \
-		P_GET_OBJECT(UPrimitiveComponent,Z_Param_HitComponent); \
-		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
-		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComponent); \
-		P_GET_STRUCT(FVector,Z_Param_NormalImpulse); \
-		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_Hit); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->RegisterHit(Z_Param_HitComponent,Z_Param_OtherActor,Z_Param_OtherComponent,Z_Param_NormalImpulse,Z_Param_Out_Hit); \
-		P_NATIVE_END; \
-	} \
  \
 	DECLARE_FUNCTION(execDeath) \
 	{ \
@@ -42,19 +25,6 @@ struct FHitResult;
 
 
 #define RollossusMechanics_Source_RollossusMechanics_C_BallMinimum_h_12_RPC_WRAPPERS_NO_PURE_DECLS \
- \
-	DECLARE_FUNCTION(execRegisterHit) \
-	{ \
-		P_GET_OBJECT(UPrimitiveComponent,Z_Param_HitComponent); \
-		P_GET_OBJECT(AActor,Z_Param_OtherActor); \
-		P_GET_OBJECT(UPrimitiveComponent,Z_Param_OtherComponent); \
-		P_GET_STRUCT(FVector,Z_Param_NormalImpulse); \
-		P_GET_STRUCT_REF(FHitResult,Z_Param_Out_Hit); \
-		P_FINISH; \
-		P_NATIVE_BEGIN; \
-		P_THIS->RegisterHit(Z_Param_HitComponent,Z_Param_OtherActor,Z_Param_OtherComponent,Z_Param_NormalImpulse,Z_Param_Out_Hit); \
-		P_NATIVE_END; \
-	} \
  \
 	DECLARE_FUNCTION(execDeath) \
 	{ \

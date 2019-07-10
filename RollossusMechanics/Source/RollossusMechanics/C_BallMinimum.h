@@ -38,7 +38,7 @@ protected:
 	float AirForce;
 	float TurningAid;
 
-	float RollingTorque = 3000000000.0f;
+	float RollingTorque = 800000000.0f;
 
 public:	
 	// Called every frame
@@ -52,15 +52,5 @@ private:
 	//The Input axis
 	float UpInput;
 	float RightInput;
-
-
-	//---------
-	//FUNCTIONS
-	//---------
-
-	///Registers a hit to the object. Empty Definition because for now it doesn't do anything - will be implemented in child classes
-	UFUNCTION()
-	void RegisterHit(UPrimitiveComponent* HitComponent, AActor* OtherActor, UPrimitiveComponent* OtherComponent, FVector NormalImpulse, const FHitResult& Hit);
-
 	
 };

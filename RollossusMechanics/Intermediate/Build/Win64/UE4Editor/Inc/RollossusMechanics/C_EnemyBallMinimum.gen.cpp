@@ -73,7 +73,11 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 	};
 #if WITH_METADATA
 	const UE4CodeGen_Private::FMetaDataPairParam Z_Construct_UClass_UC_EnemyBallMinimum_Statics::Class_MetaDataParams[] = {
+		{ "BlueprintSpawnableComponent", "" },
+		{ "BlueprintType", "true" },
+		{ "ClassGroupNames", "Custom" },
 		{ "IncludePath", "C_EnemyBallMinimum.h" },
+		{ "IsBlueprintBase", "true" },
 		{ "ModuleRelativePath", "C_EnemyBallMinimum.h" },
 		{ "ToolTip", "This is the Enemy-Specific class for this. This will contain basic functions such as navigating to the player, and dealing damage on hit.\n       there will be more classes for specific enemies." },
 	};
@@ -105,7 +109,7 @@ void EmptyLinkFunctionForGeneratedCodeC_EnemyBallMinimum() {}
 		}
 		return OuterClass;
 	}
-	IMPLEMENT_CLASS(UC_EnemyBallMinimum, 3541316492);
+	IMPLEMENT_CLASS(UC_EnemyBallMinimum, 3425355748);
 	template<> ROLLOSSUSMECHANICS_API UClass* StaticClass<UC_EnemyBallMinimum>()
 	{
 		return UC_EnemyBallMinimum::StaticClass();

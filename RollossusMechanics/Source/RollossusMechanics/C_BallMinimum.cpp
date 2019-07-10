@@ -37,10 +37,6 @@ void UC_BallMinimum::BeginPlay()
 	TArray<USpringArmComponent*> SpringArmComponents;
 	GetOwner()->GetComponents<USpringArmComponent>(SpringArmComponents);
 	SpringArm = SpringArmComponents[0]; //Only one spring arm component, assigned here.
-
-
-	VisibleSphere->OnComponentHit.AddDynamic(this, &UC_BallMinimum::RegisterHit); //Calls RegisterHit() whenever the visible sphere component is hit
-
 }
 
 void UC_BallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
@@ -51,11 +47,6 @@ void UC_BallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorC
 		//rotate when childed in C++ and the way our pilot sphere is used to calculate the visible sphere direction.
 		//It's a pretty cheap operation, though.
 	PilotSphere->SetWorldLocation(VisibleSphere->GetComponentLocation());
-}
-
-
-void UC_BallMinimum::RegisterHit(UPrimitiveComponent * HitComponent, AActor * OtherActor, UPrimitiveComponent * OtherComponent, FVector NormalImpulse, const FHitResult & Hit)
-{
 }
 
 ///<summary> This kills the Actor that the component is attached to </summary>

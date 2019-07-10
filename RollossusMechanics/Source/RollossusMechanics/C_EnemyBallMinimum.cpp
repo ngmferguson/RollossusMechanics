@@ -19,7 +19,16 @@ void UC_EnemyBallMinimum::BeginPlay() {
 			UE_LOG(LogTemp, Error, TEXT("NO PLAYER CONTROLLER FOUND"));
 		}
 		else {
-			PlayerController = GetWorld()->GetFirstPlayerController();					
+			PlayerController = GetWorld()->GetFirstPlayerController();
+
+			//Grabbing the visible sphere component of the player ball
+			TArray<UStaticMeshComponent*> StaticMeshComponents;
+			PlayerController->GetPawn()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
+			for (int j = 0; j < StaticMeshComponents.Num(); j++)
+			{
+				if (StaticMeshComponents[j]->GetName() == "VisibleSphere")
+					PlayerVisibleSphere = StaticMeshComponents[j];
+			}
 		}
 	}
 
@@ -30,7 +39,7 @@ void UC_EnemyBallMinimum::BeginPlay() {
 void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	if (PathToLocation != nullptr && PathToLocation->PathPoints.Num() > 0)
+	if (IsBallNavigating && PathToLocation != nullptr && PathToLocation->PathPoints.Num() > 0) //Ducks null pointers, and ensures we want the ball to navigate
 		MoveToLocation();
 }
 
@@ -40,15 +49,7 @@ void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FA
 ///<para> PathToLocation is a structure which has lots of pathfinding information, including an array of vectors, our path</para></summary>
 void UC_EnemyBallMinimum::GetPathToLocation()
 {
-	TArray<UStaticMeshComponent*> StaticMeshComponents;
-	PlayerController->GetPawn()->GetComponents<UStaticMeshComponent>(StaticMeshComponents);
-	for (int i = 0; i < StaticMeshComponents.Num(); i++)
-	{
-		if (StaticMeshComponents[i]->GetName() == "VisibleSphere")
-			PlayerVisibleSphere = StaticMeshComponents[i];
-	}
-
-	TargetLocation = PlayerVisibleSphere->GetComponentLocation(); //GetActorLocation();
+	TargetLocation = (PlayerVisibleSphere->GetComponentLocation()) + (PlayerVisibleSphere->GetComponentVelocity() * LeadTime); //This adjusts for the player's velocity
 	UNavigationSystemV1* NavigationSystem = FNavigationSystem::GetCurrent<UNavigationSystemV1>(GetWorld());
 	PathToLocation = NavigationSystem->FindPathToLocationSynchronously(GetWorld(), VisibleSphere->GetComponentLocation(), TargetLocation);
 }
@@ -64,7 +65,9 @@ void UC_EnemyBallMinimum::Death() {
 ///<summary>This function specifically causes our enemy to roll toward the TargetLocation</summary>
 void UC_EnemyBallMinimum::MoveToLocation()
 {
-	if (PathToLocation->PathPoints.Num() == 1)
+	if (PathToLocation->PathPoints.Num() == 0)
+		return; //Avoids crashes :)
+	else if (PathToLocation->PathPoints.Num() == 1)
 		PilotSphere->SetWorldRotation(UKismetMathLibrary::FindLookAtRotation(VisibleSphere->GetComponentLocation(), PathToLocation->PathPoints[0]));// PlayerController->GetPawn()->GetActorLocation()));
 	else
 		PilotSphere->SetWorldRotation(UKismetMathLibrary::FindLookAtRotation(VisibleSphere->GetComponentLocation(), PathToLocation->PathPoints[1]));// PlayerController->GetPawn()->GetActorLocation()));

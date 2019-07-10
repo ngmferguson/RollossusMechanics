@@ -10,7 +10,7 @@
 /**
  * The playerball version of BallMinimum. This will be possessed by the player and be the thing the player can actually control.
  */
-UCLASS()
+UCLASS(Blueprintable, ClassGroup = (Custom), meta = (BlueprintSpawnableComponent))
 class ROLLOSSUSMECHANICS_API UC_PlayerBallMinimum : public UC_BallMinimum
 {
 	GENERATED_BODY()
