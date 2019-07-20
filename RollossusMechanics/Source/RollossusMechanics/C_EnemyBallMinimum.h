@@ -49,6 +49,9 @@ protected:
 
 	///Rolls the enemy ball toward the location calculated in GetPathToLocation
 	void MoveToLocation();
+
+	///Launches the enemy at the player
+	void Bash(float BashLead);
 	
 private:
 	//---------
@@ -71,7 +74,6 @@ private:
 	///Sets PathTolocation containing the points needed to locate the path to TargetLocation - often the player
 	UFUNCTION()
 	void GetPathToLocation();
-
 
 
 };

@@ -39,8 +39,10 @@ void UC_EnemyBallMinimum::BeginPlay() {
 void UC_EnemyBallMinimum::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction)
 {
 	Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-	if (IsBallNavigating && PathToLocation != nullptr && PathToLocation->PathPoints.Num() > 0) //Ducks null pointers, and ensures we want the ball to navigate
-		MoveToLocation();
+	PilotSphere->SetWorldLocation(VisibleSphere->GetComponentLocation()); //Updates PilotSphere's location
+	//if (IsBallNavigating && PathToLocation != nullptr && PathToLocation->PathPoints.Num() > 0) //Ducks null pointers, and ensures we want the ball to navigate
+		//MoveToLocation();
+	//TODO: UNCOMMENT THE ABOVE ONCE RESTRUCTURE IS DONE
 }
 
 
@@ -76,4 +78,23 @@ void UC_EnemyBallMinimum::MoveToLocation()
 	FVector PilotRightVector = (PilotSphere->GetRightVector());
 	PilotRightVector.Normalize();
 	VisibleSphere->AddTorqueInRadians(PilotRightVector * (RollingTorque * FApp::GetDeltaTime())); //The actual rolling of the ball
+}
+
+///<summary> Launches the ball at the player, with some amount of lead time to "predict" player location </summary>
+void UC_EnemyBallMinimum::Bash(float BashLead)
+{
+	FVector PlayerFutureLocation;
+	PlayerFutureLocation = (PlayerVisibleSphere->GetComponentLocation()) + (PlayerVisibleSphere->GetComponentVelocity() * BashLead);
+
+	//Aims the pilot sphere at the player's future location
+	PilotSphere->SetWorldRotation(UKismetMathLibrary::FindLookAtRotation
+			(VisibleSphere->GetComponentLocation(), PlayerFutureLocation));
+
+	//Adds the impulse to launch the ball at the player
+	FVector ImpulseVector = FVector(PilotSphere->GetForwardVector().X,
+		PilotSphere->GetForwardVector().Y,
+		PilotSphere->GetForwardVector().Z + 0.25f);
+	ImpulseVector.Normalize();
+	VisibleSphere->AddImpulse(ImpulseVector);
+
 }

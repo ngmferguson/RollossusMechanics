@@ -28,4 +28,6 @@ private:
 	///Connects a component to this enemy's visible sphere
 	bool ConstrainTwoComponents(UPrimitiveComponent* ConstrainedComponent);
 
+	///Returns the state the leech is in
+	enum ELeechState GetLeechState();
 };
