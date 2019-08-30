@@ -1,62 +1,45 @@
 #include "C_LeechBall.h"
 #include "GameFramework/Actor.h"
 
-namespace LeechStates {
-	typedef enum class ELeechState : uint8
-	{
-		LE_Idle,
-		LE_Navigating,
-		LE_Attacking,
-		LE_Leeching,
-		LE_Detaching,
-		LE_Resting,
-		LE_Death,
-		LE_CaveAndDie,
-	};
-
-	enum ELeechState GetLeechState()
-	{
-
-		return ELeechState::LE_Navigating;
-	}
-}
-
-
-
 void UC_LeechBall::BeginPlay() {
 	Super::BeginPlay();
 	VisibleSphere->SetNotifyRigidBodyCollision(true);
 	VisibleSphere->OnComponentHit.AddDynamic(this, &UC_LeechBall::RegisterHit); //Calls RegisterHit() whenever the visible sphere component is hit
+	ELeechState CurrentState;
+}
+
+UC_LeechBall::ELeechState UC_LeechBall::GetCurrentState()
+{
+	return ELeechState::LE_Navigating;
 }
 
 void UC_LeechBall::TickComponent(float DeltaTime, ELevelTick TickType, FActorComponentTickFunction* ThisTickFunction) {
 		Super::TickComponent(DeltaTime, TickType, ThisTickFunction);
-
-		LeechStates::ELeechState CurrentLeechState = LeechStates::ELeechState::LE_Idle;
-		CurrentLeechState = LeechStates::GetLeechState();
+		
+		CurrentState = GetCurrentState();
 
 		//Finite State Machine for the Leech
-		switch (CurrentLeechState) {
-		case LeechStates::ELeechState::LE_Idle:
+		switch (CurrentState) {
+		case ELeechState::LE_Idle:
 			//Default state, does nothing
 			break;
-		case LeechStates::ELeechState::LE_Navigating:
+		case ELeechState::LE_Navigating:
 			//Navigates to player
 			MoveToLocation();
 			break;
-		case LeechStates::ELeechState::LE_Attacking:
+		case ELeechState::LE_Attacking:
 			Bash(LeadTime);
 			break;
-		case LeechStates::ELeechState::LE_Resting:
+		case ELeechState::LE_Resting:
 			//Does nothing, should not be in this state for long
 			break;
-		case LeechStates::ELeechState::LE_Detaching:
+		case ELeechState::LE_Detaching:
 			VisibleSphere->SetLinearDamping(0);
 			break;
-		case LeechStates::ELeechState::LE_Death:
+		case ELeechState::LE_Death:
 			this->BeginDestroy(); //RIP :(
 			break;
-		case LeechStates::ELeechState::LE_CaveAndDie:
+		case ELeechState::LE_CaveAndDie:
 			//TODO
 			break;
 		}
@@ -112,6 +95,12 @@ bool UC_LeechBall::ConstrainTwoComponents(UPrimitiveComponent * ConstrainedCompo
 
 	return true;
 }
+
+
+
+
+
+
 
 
 
